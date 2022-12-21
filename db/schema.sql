@@ -1,0 +1,3 @@
+DROP DATABASE IF EXISTS hellyum_db;
+
+CREATE DATABASE hellyum_db;
