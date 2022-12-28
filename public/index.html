@@ -6,10 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HellYum!</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="public/style.css" type="text/css">
 </head>
 <body>
  
-    <section class="hero is-primary is-medium">
+    <section class="hero is-info is-fullheight">
         <!-- Hero head: will stick at the top -->
         <div class="hero-head">
           <nav class="navbar">
@@ -26,21 +27,14 @@
               </div>
               <div id="navbarMenuHeroA" class="navbar-menu">
                 <div class="navbar-end">
-                  <a class="navbar-item is-active">
-                    Home
-                  </a>
-                  <a class="navbar-item">
-                    Examples
-                  </a>
-                  <a class="navbar-item">
-                    Documentation
-                  </a>
                   <span class="navbar-item">
-                    <a class="button is-primary is-inverted">
-                      <span class="icon">
-                        <i class="fab fa-github"></i>
-                      </span>
+                    <a class="button is-info is-inverted "id="login">
                       <span>LOGIN</span>
+                    </a>
+                  </span>
+                  <span class="navbar-item">
+                    <a class="button is-info is-inverted" id="signup" >
+                      <span>SIGNUP</span>
                     </a>
                   </span>
                 </div>
@@ -48,6 +42,8 @@
             </div>
           </nav>
         </div>
+        
+        
       
         <!-- Hero content: will be in the middle -->
         <div class="hero-body">
@@ -56,30 +52,107 @@
               HELLYUM!
             </p>
             <p class="subtitle">
-              Your one stop app for a weekly meal planner and grocery list generator
+              Your one stop for a weekly meal planner and grocery list generator
             </p>
           </div>
         </div>
       
         <!-- Hero footer: will stick at the bottom -->
         <div class="hero-foot">
-          <nav class="tabs">
+          <nav class="tabs is-boxed is-fullwidth">
             <div class="container">
               <ul>
-                <li class="is-active"><a>Overview</a></li>
-                <li><a>Modifiers</a></li>
-                <li><a>Grid</a></li>
-                <li><a>Elements</a></li>
-                <li><a>Components</a></li>
-                <li><a>Layout</a></li>
+                <li class="is-active">
+                  <a>About Us</a>
+                </li>
+                <li>
+                  <a>Modifiers</a>
+                </li>
+                <li>
+                  <a>Layout</a>
+                </li>
               </ul>
             </div>
           </nav>
         </div>
-      </section>
+<!-----------login modal----------------------------->
+        <div class="modal ">
+          <div class="modal-background"></div>
+          <div class="modal-content has-background py-6 px-6 ">
+            <h2 class="title mb-8">LOGIN</h2>
+            <div class="field">
+              <p class="control has-icons-left has-icons-right">
+                <input class="input" type="email" placeholder="Email">
+                <span class="icon is-small is-left">
+                  <i class="fas fa-envelope"></i>
+                </span>
+                <span class="icon is-small is-right">
+                  <i class="fas fa-check"></i>
+                </span>
+              </p>
+            </div>
+            <div class="field">
+              <p class="control has-icons-left">
+                <input class="input" type="password" placeholder="Password">
+                <span class="icon is-small is-left">
+                  <i class="fas fa-lock"></i>
+                </span>
+              </p>
+            </div>
+            <div class="field">
+              <p class="control">
+                <button class="button is-info">
+                  Login
+                </button>
+              </p>
+            </div>
+          </div>
+        
+        </div>
+<!----------------------signup modal--------------------------------------->
+        <div class="modal" id="join">
+          <div class="modal-background" id="joinBg"></div>
+          <div class="modal-content has-background py-6 px-6 ">
+            <h2 class="title mb-8">SIGNUP</h2>
+            <div class="field">
+              <label class="label">User Name</label>
+              <div class="control">
+                <input class="input" type="text" placeholder="e.g Alex Smith">
+              </div>
+            </div>
+            
+            <div class="field">
+              <label class="label">Email</label>
+              <div class="control">
+                <input class="input" type="email" placeholder="e.g. alexsmith@gmail.com">
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="label">Password</label>
+              <div class="control">
+                <input class="input" type="text" placeholder="e.g. password">
+              </div>
+            </div>
+
+            <div class="field is-grouped is-grouped-right">
+              <p class="control">
+                <a class="button is-info">
+                  Submit
+                </a>
+              </p>
+              <p class="control">
+                <a class="button is-light">
+                  Cancel
+                </a>
+              </p>
+            </div>
+          </div>       
+
+        
       
-  <script src="public/script.js"></script>
-  <script src="public/.css"></script>
+  <script src="main.js"></script>
+ 
     
 </body>
 </html>
