@@ -19,7 +19,7 @@
                 <a class="navbar-item">
                   
                 </a>
-                <span class="navbar-burger" data-target="navbarMenuHeroA">
+                <span class="navbar-burger burger" data-target="navbarMenuHeroA" >
                   <span></span>
                   <span></span>
                   <span></span>
@@ -27,6 +27,15 @@
               </div>
               <div id="navbarMenuHeroA" class="navbar-menu">
                 <div class="navbar-end">
+                  <a class="navbar-item is-active">
+              Home
+            </a>
+            <a class="navbar-item">
+              Examples
+            </a>
+            <a class="navbar-item">
+              About Us
+            </a>
                   <span class="navbar-item">
                     <a class="button is-info is-inverted "id="login">
                       <span>LOGIN</span>
@@ -57,24 +66,7 @@
           </div>
         </div>
       
-        <!-- Hero footer: will stick at the bottom -->
-        <div class="hero-foot">
-          <nav class="tabs is-boxed is-fullwidth">
-            <div class="container">
-              <ul>
-                <li class="is-active">
-                  <a>About Us</a>
-                </li>
-                <li>
-                  <a>Modifiers</a>
-                </li>
-                <li>
-                  <a>Layout</a>
-                </li>
-              </ul>
-            </div>
-          </nav>
-        </div>
+        
 <!-----------login modal----------------------------->
         <div class="modal ">
           <div class="modal-background"></div>
@@ -86,11 +78,7 @@
                 <span class="icon is-small is-left">
                   <i class="fas fa-envelope"></i>
                 </span>
-                <span class="icon is-small is-right">
-                  <i class="fas fa-check"></i>
-                </span>
-              </p>
-            </div>
+              </div>
             <div class="field">
               <p class="control has-icons-left">
                 <input class="input" type="password" placeholder="Password">
@@ -114,25 +102,34 @@
           <div class="modal-background" id="joinBg"></div>
           <div class="modal-content has-background py-6 px-6 ">
             <h2 class="title mb-8">SIGNUP</h2>
+
             <div class="field">
-              <label class="label">User Name</label>
-              <div class="control">
-                <input class="input" type="text" placeholder="e.g Alex Smith">
+              <label class="label has-text-white">Username</label>
+              <div class="control has-icons-left has-icons-right">
+                <input class="input" type="text" placeholder="username">
+                <span class="icon is-small is-left">
+                  <i class="fas fa-user"></i>
+                </span>
               </div>
             </div>
             
             <div class="field">
-              <label class="label">Email</label>
-              <div class="control">
-                <input class="input" type="email" placeholder="e.g. alexsmith@gmail.com">
-              </div>
+              <label class="label has-text-white">Email</label>
+              <div class="control has-icons-left">
+                <input class="input" type="email" placeholder="@Email.com">
+                <span class="icon is-small is-left">
+                  <i class="fas fa-envelope"></i>
+                </span>
             </div>
 
             <div class="field">
-              <label class="label">Password</label>
-              <div class="control">
-                <input class="input" type="text" placeholder="e.g. password">
-              </div>
+              <label class="label has-text-white">Password</label>
+              <p class="control has-icons-left">
+                <input class="input" type="password" placeholder="Password">
+                <span class="icon is-small is-left">
+                  <i class="fas fa-lock"></i>
+                </span>
+              </p>
             </div>
 
             <div class="field is-grouped is-grouped-right">
@@ -141,18 +138,14 @@
                   Submit
                 </a>
               </p>
-              <p class="control">
-                <a class="button is-light">
-                  Cancel
-                </a>
-              </p>
+              
             </div>
           </div>       
 
         
       
   <script src="main.js"></script>
- 
+  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
     
 </body>
 </html>
