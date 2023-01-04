@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HellYum!</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    
+</head>
+<body>
+ 
+    <section class="hero is-info is-fullheight">
+        <!-- Hero head: will stick at the top -->
+        <div class="hero-head">
+          <nav class="navbar">
+            <div class="container">
+              <div class="navbar-brand">
+                <a class="navbar-item">
+                  
+                </a>
+                <span class="navbar-burger burger" data-target="navbarMenuHeroA" >
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </span>
+              </div>
+              <div id="navbarMenuHeroA" class="navbar-menu">
+                <div class="navbar-end">
+                  <a class="navbar-item is-active">
+              Home
+            </a>
+            <a class="navbar-item" input type=button onClick="location.href='examples.html'">
+              Examples
+            </a>
+            <a class="navbar-item" input type=button onClick="location.href='aboutus.html'">
+              About Us
+            </a>
+                  <span class="navbar-item">
+                    <a class="button is-info is-inverted "id="login">
+                      <span>LOGIN</span>
+                    </a>
+                  </span>
+                  <span class="navbar-item">
+                    <a class="button is-info is-inverted" id="signup" >
+                      <span>SIGNUP</span>
+                    </a>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </nav>
+        </div>
+        
+        
+      
+        <!-- Hero content: will be in the middle -->
+        <div class="hero-body">
+          <div class="container has-text-centered">
+            <p class="title">
+              HELLYUM!
+            </p>
+            <p class="subtitle">
+              Your one stop for a weekly meal planner and grocery list generator
+            </p>
+          </div>
+        </div>
+      
+        
+<!-----------login modal----------------------------->
+        <div class="modal ">
+          <div class="modal-background"></div>
+          <div class="modal-content has-background py-6 px-6 ">
+            <h2 class="title mb-8">LOGIN</h2>
+            <div class="field">
+              <p class="control has-icons-left has-icons-right">
+                <input class="input" type="email" placeholder="Email">
+                <span class="icon is-small is-left">
+                  <i class="fas fa-envelope"></i>
+                </span>
+              </div>
+            <div class="field">
+              <p class="control has-icons-left">
+                <input class="input" type="password" placeholder="Password">
+                <span class="icon is-small is-left">
+                  <i class="fas fa-lock"></i>
+                </span>
+              </p>
+            </div>
+            <div class="field">
+              <p class="control">
+                <button class="button is-info">
+                  Login
+                </button>
+              </p>
+            </div>
+          </div>
+        
+        </div>
+<!----------------------signup modal--------------------------------------->
+        <div class="modal" id="join">
+          <div class="modal-background" id="joinBg"></div>
+          <div class="modal-content has-background py-6 px-6 ">
+            <h2 class="title mb-8">SIGNUP</h2>
+
+            <div class="field">
+              <label class="label has-text-white">Username</label>
+              <div class="control has-icons-left has-icons-right">
+                <input class="input" type="text" placeholder="username">
+                <span class="icon is-small is-left">
+                  <i class="fas fa-user"></i>
+                </span>
+              </div>
+            </div>
+            
+            <div class="field">
+              <label class="label has-text-white">Email</label>
+              <div class="control has-icons-left">
+                <input class="input" type="email" placeholder="@Email.com">
+                <span class="icon is-small is-left">
+                  <i class="fas fa-envelope"></i>
+                </span>
+            </div>
+
+            <div class="field">
+              <label class="label has-text-white">Password</label>
+              <p class="control has-icons-left">
+                <input class="input" type="password" placeholder="Password">
+                <span class="icon is-small is-left">
+                  <i class="fas fa-lock"></i>
+                </span>
+              </p>
+            </div>
+
+            <div class="field is-grouped is-grouped-right">
+              <p class="control">
+                <a class="button is-info">
+                  Submit
+                </a>
+              </p>
+              
+            </div>
+          </div>       
+
+        
+      
+  <script src="main.js"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    
+</body>
+</html>
