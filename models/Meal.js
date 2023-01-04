@@ -23,7 +23,7 @@ Meal.init(
       },
     },
     instructions: {
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT,
     },
   },
   {
