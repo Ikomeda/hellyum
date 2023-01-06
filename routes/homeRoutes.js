@@ -1,29 +1,32 @@
 const router = require('express').Router();
-const {
-  Ingredients,
-  Meal_Ingredient,
-  Meal,
-  User,
-} = require('../models');
+const { Ingredients, Meal, User } = require('../models');
 
+//GET all meals for hompage
 router.get('/', async (req, res) => {
   try {
-    const mealDateData = await Meal.findAll({
-      include: [
-        {
-          model: Meal,
-          attributes: ['meal_name'],
-        },
-      ],
-    });
+    const dbMealData = await Meal.findAll();
 
-    const plannedMeals = mealDateData.map((meal) => meal.get({ plain: true }));
+    const meals = dbMealData((meal) => {
+      meal.get({ plain: true });
+    });
 
     res.render('homepage', {
-      plannedMeals,
-      logged_in: req.session.logged_in,
+      meals,
+      // loggedIn: req.session.loggedIn,
     });
   } catch (err) {
+    console.log(err);
     res.status(500).json(err);
   }
 });
+
+//login screen
+router.get('/login', (req, res) => {
+  if (req.session.loggedIn) {
+    res.redirect('/');
+    return;
+  }
+  res.render('login');
+});
+
+module.exports = router;
