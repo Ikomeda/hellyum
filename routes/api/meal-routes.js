@@ -1,7 +1,6 @@
 const router = require('express').Router();
 const {
   Meal,
-  Meal_Date,
   Meal_Ingredient,
   User,
   Ingredients,
@@ -12,11 +11,9 @@ router.get('/', async (req, res) => {
   try {
     const data = await Meal.findAll({
       include: [
-        // { model: User, through: Meal_Date, as: 'meal_date_user' },
         {
           model: Ingredients,
           through: Meal_Ingredient,
-          // as: 'meal_ingredient-ingredient',
         },
       ],
     });
@@ -33,11 +30,9 @@ router.get('/:id', async (req, res) => {
   try {
     const data = await Meal.findByPk(req.params.id, {
       include: [
-        // { model: User, through: Meal_Date, as: 'meal_date_user' },
         {
           model: Ingredients,
           through: Meal_Ingredient,
-          // as: 'meal_ingredient-ingredient',
         },
       ],
     });
