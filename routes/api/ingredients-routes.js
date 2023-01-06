@@ -2,7 +2,6 @@ const router = require('express').Router();
 const {
   User,
   Meal,
-  Meal_Date,
   Meal_Ingredient,
   Ingredients,
 } = require('../../models');

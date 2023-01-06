@@ -1,19 +1,18 @@
 const router = require('express').Router();
 const {
   Ingredients,
-  Meal_Date,
-  Meal_Ingredients,
+  Meal_Ingredient,
   Meal,
   User,
 } = require('../models');
 
 router.get('/', async (req, res) => {
   try {
-    const mealDateData = await Meal_Date.findAll({
+    const mealDateData = await Meal.findAll({
       include: [
         {
           model: Meal,
-          attributes: ['name'],
+          attributes: ['meal_name'],
         },
       ],
     });
