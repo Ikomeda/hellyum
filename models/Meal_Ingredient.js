@@ -25,6 +25,9 @@ Meal_Ingredient.init(
         key: 'id',
       },
     },
+    measurement: {
+      type: DataTypes.STRING,
+    },
   },
   {
     sequelize,

@@ -11,14 +11,14 @@ const {
 router.get('/', async (req, res) => {
   try {
     const data = await Meal.findAll({
-      include: [
-        { model: User, through: Meal_Date, as: 'meal_date_user' },
-        {
-          model: Ingredients,
-          through: Meal_Ingredients,
-          as: 'meal_ingredient-ingredient',
-        },
-      ],
+      // include: [
+      //   { model: User, through: Meal_Date, as: 'meal_date_user' },
+      //   {
+      //     model: Ingredients,
+      //     through: Meal_Ingredients,
+      //     as: 'meal_ingredient-ingredient',
+      //   },
+      // ],
     });
 
     res.status(200).json(data);
