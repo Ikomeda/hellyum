@@ -24,7 +24,7 @@ Meal.init(
     },
     instructions: {
       type: DataTypes.TEXT,
-    },
+    }
   },
   {
     sequelize,
