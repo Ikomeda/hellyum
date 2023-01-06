@@ -2,19 +2,43 @@ const { Ingredients } = require('../models');
 
 const ingredientData = [
   {
-    name: 'Chicken',
+    name: 'Chicken Breast',
   },
   {
     name: 'BBQ Sauce',
   },
   {
-    name: 'Black Bean Texas Caviar',
+    name: 'Black Beans',
   },
   {
-    name: 'Monterey Jack',
+    name: 'Whole Kernel Corn',
+  },
+  {
+    name: 'Jalapeno',
+  },
+  {
+    name: 'Red Onion',
   },
   {
     name: 'Garlic',
+  },
+  {
+    name: 'Cilantro',
+  },
+  {
+    name: 'White Wine Vinegar',
+  },
+  {
+    name: 'Extra Virgin Olive Oil',
+  },
+  {
+    name: 'Honey',
+  },
+  {
+    name: 'Monterey Jack Cheese',
+  },
+  {
+    name: 'Flour Tortillas',
   },
   {
     name: 'Ginger',
@@ -38,7 +62,7 @@ const ingredientData = [
     name: 'Red Bell Pepper',
   },
   {
-    name: 'Coconut Milk',
+    name: 'Full Fat Coconut Milk',
   },
   {
     name: 'Yellow Onion',
@@ -50,13 +74,40 @@ const ingredientData = [
     name: 'Fish Sauce',
   },
   {
-    name: 'Cilantro',
+    name: 'Basil',
   },
   {
-    name: '',
+    name: 'Sea-Salt',
   },
   {
-    name: '',
+    name: 'Pepper',
+  },
+  {
+    name: 'Basmati Rice',
+  },
+  {
+    name: 'Naan Bread',
+  },
+  {
+    name: 'White Beans',
+  },
+  {
+    name: 'Rotel Diced Tomatoes with Green Chilis',
+  },
+  {
+    name: 'Chicken Broth/Stock',
+  },
+  {
+    name: 'Chili Powder',
+  },
+  {
+    name: 'Cumin Powder',
+  },
+  {
+    name: 'Ranch dip or Dressing Mix',
+  },
+  {
+    name: 'Cream Cheese',
   },
   {
     name: '',
