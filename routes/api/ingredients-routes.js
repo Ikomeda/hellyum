@@ -10,9 +10,9 @@ const {
 router.get('/', async (req, res) => {
   try {
     const data = await Ingredients.findAll({
-      // include: [
-      //   { model: Meal, through: Meal_Ingredient, as: 'meal_ingredient_meal' },
-      // ],
+      include: [
+        { model: Meal, through: Meal_Ingredient, as: 'meal_ingredient_meal' },
+      ],
     });
 
     res.status(200).json(data);
@@ -21,13 +21,13 @@ router.get('/', async (req, res) => {
   }
 });
 
-// GET one ingredients
+// GET one Ingredients
 router.get('/:id', async (req, res) => {
   try {
     const data = await Ingredients.findByPk(req.params.id, {
-      // include: [
-      //   { model: Meal, through: Meal_Ingredient, as: 'meal_ingredient_meal' },
-      // ],
+      include: [
+        { model: Meal, through: Meal_Ingredient, as: 'meal_ingredient_meal' },
+      ],
     });
     if (!data) {
       res.status(404).json({ message: 'No ingredient with this id' });
@@ -39,7 +39,7 @@ router.get('/:id', async (req, res) => {
   }
 });
 
-// CREATE new ingredient
+// CREATE new Ingredients
 router.post('/', async (req, res) => {
   try {
     const data = await Ingredients.create({
@@ -52,7 +52,7 @@ router.post('/', async (req, res) => {
   }
 });
 
-// UPDATE ingredient
+// UPDATE Ingredients
 router.put('/:id', async (req, res) => {
   try {
     const data = await Ingredients.update(
@@ -76,7 +76,7 @@ router.put('/:id', async (req, res) => {
   }
 });
 
-//DELETE ingredient
+//DELETE Ingredients
 router.delete('/:id', async (req, res) => {
   try {
     const data = await Ingredients.destroy({

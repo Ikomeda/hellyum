@@ -16,9 +16,11 @@ body{
     border-radius: 5px 5px 0 0;
     overflow: hidden;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.397);
+    border:1px solid black;margin-left:auto;margin-right:auto;
 }
 
 .content-table thead tr{
+
     background-color:darkblue;
     color: white;
     text-align: left;
@@ -28,10 +30,12 @@ body{
 .content-table th, .content-table td {
     padding: 12px 15px;
     background: fixed skyblue ;
+    border:1px solid black    
 }
 
 .content-table tbody tr{
     border-bottom: 1px solid gray;
+    border:1px solid black
 }
 
 .content-table tbody tr:nth-os-type(even) {
