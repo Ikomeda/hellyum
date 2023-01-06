@@ -24,6 +24,14 @@ Meal_Ingredient.init(
         model: 'ingredients',
         key: 'id',
       },
+    }, 
+    measurement: {
+      type: DataTypes.STRING,
+      allowNull: true,
+      defaultValue: null,
+    },
+    measurement: {
+      type: DataTypes.STRING,
     },
   },
   {
