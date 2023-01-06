@@ -23,7 +23,6 @@ Meal.belongsToMany(User, {
 // Ingredients belong to Many Meals (through Meal_Ingredients)
 Ingredients.belongsToMany(Meal, {
   through: Meal_Ingredient,
-  as: 'meal_ingredient_meal',
   foreignKey: 'ingredient_id',
   onDelete: 'cascade',
 });
@@ -31,7 +30,6 @@ Ingredients.belongsToMany(Meal, {
 // Meal belong to Many Ingredients (through Meal_Ingredients)
 Meal.belongsToMany(Ingredients, {
   through: Meal_Ingredient,
-  as: 'meal_ingredient_ingredient',
   foreignKey: 'meal_id',
   onDelete: 'cascade',
 });
