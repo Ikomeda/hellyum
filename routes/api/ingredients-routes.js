@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const {
   User,
+  Meal,
   Meal_Date,
   Meal_Ingredient,
   Ingredients,
@@ -10,9 +11,7 @@ const {
 router.get('/', async (req, res) => {
   try {
     const data = await Ingredients.findAll({
-      include: [
-        { model: Meal, through: Meal_Ingredient, as: 'meal_ingredient_meal' },
-      ],
+      include: [{ model: Meal, through: Meal_Ingredient }],
     });
 
     res.status(200).json(data);
@@ -25,9 +24,7 @@ router.get('/', async (req, res) => {
 router.get('/:id', async (req, res) => {
   try {
     const data = await Ingredients.findByPk(req.params.id, {
-      include: [
-        { model: Meal, through: Meal_Ingredient, as: 'meal_ingredient_meal' },
-      ],
+      include: [{ model: Meal, through: Meal_Ingredient }],
     });
     if (!data) {
       res.status(404).json({ message: 'No ingredient with this id' });
