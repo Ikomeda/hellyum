@@ -16,10 +16,11 @@ router.get('/', async (req, res) => {
         {
           model: Ingredients,
           through: Meal_Ingredient,
-          as: 'meal_ingredient-ingredient',
+          // as: 'meal_ingredient-ingredient',
         },
       ],
     });
+    console.log(data);
 
     res.status(200).json(data);
   } catch (err) {
@@ -36,7 +37,7 @@ router.get('/:id', async (req, res) => {
         {
           model: Ingredients,
           through: Meal_Ingredient,
-          as: 'meal_ingredient-ingredient',
+          // as: 'meal_ingredient-ingredient',
         },
       ],
     });

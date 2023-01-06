@@ -30,6 +30,9 @@ Meal_Ingredient.init(
       allowNull: true,
       defaultValue: null,
     },
+    measurement: {
+      type: DataTypes.STRING,
+    },
   },
   {
     sequelize,
