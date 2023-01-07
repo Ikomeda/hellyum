@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HellYum!</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
+  </head>
+  <body>
+    <section class="hero is-info">
+      <div class="hero-body">
+        <div class="container has-text-centered">
+          <p class="title">Welcome to HELLYUM!</p>
+          <a
+            class="button is-info is-inverted"
+            id="login"
+            input
+            type="button"
+            onClick="location.href='main.html'"
+          >
+            <span>HOME</span>
+          </a>
+        </div>
+      </div>
+    </section>
+    <div class="columns is-desktop">
+      <div class="column">
+        <h1 class="has-text-centered is-size-2">Login</h1>
+        <div class="field">
+          <label class="label">Email</label>
+          <p class="control has-icons-left has-icons-right">
+            <input class="input" type="email" placeholder="Email" />
+            <span class="icon is-small is-left">
+              <i class="fas fa-envelope"></i>
+            </span>
+            <span class="icon is-small is-right">
+              <i class="fas fa-check"></i>
+            </span>
+          </p>
+        </div>
+        <div class="field">
+          <label class="label">Password</label>
+          <p class="control has-icons-left">
+            <input class="input" type="password" placeholder="Password" />
+            <span class="icon is-small is-left">
+              <i class="fas fa-lock"></i>
+            </span>
+          </p>
+        </div>
+        <div class="field">
+          <p class="control">
+            <button class="button is-info">Login</button>
+          </p>
+        </div>
+      </div>
+      <div class="column">
+        <h1 class="has-text-centered is-size-2">Sign up to join us!</h1>
+        <div class="field">
+          <label class="label">Username</label>
+          <div class="control has-icons-left has-icons-right">
+            <input class="input" type="text" placeholder="username" />
+            <span class="icon is-small is-left">
+              <i class="fas fa-user"></i>
+            </span>
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">Email</label>
+          <div class="control has-icons-left has-icons-right">
+            <input class="input" type="email" placeholder="Email" />
+            <span class="icon is-small is-left">
+              <i class="fas fa-envelope"></i>
+            </span>
+          </div>
+          <div class="field">
+            <label class="label">Password</label>
+            <p class="control has-icons-left">
+              <input class="input" type="password" placeholder="Password" />
+              <span class="icon is-small is-left">
+                <i class="fas fa-lock"></i>
+              </span>
+            </p>
+          </div>
+        </div>
+
+        <div class="field is-grouped">
+          <div class="control">
+            <button class="button is-link is-info">Submit</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script
+      defer
+      src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"
+    ></script>
+  </body>
+</html>
