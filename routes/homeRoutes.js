@@ -3,21 +3,22 @@ const { Ingredients, Meal, Meal_Ingredient } = require('../models');
 
 //GET all meals for hompage
 router.get('/', async (req, res) => {
-  try {
-    const dbMealData = await Meal.findAll();
+  res.render('landing');
+  // try {
+  //   const dbMealData = await Meal.findAll();
 
-    const meals = dbMealData((meal) => {
-      meal.get({ plain: true });
-    });
+  //   const meals = dbMealData((meal) => {
+  //     meal.get({ plain: true });
+  //   });
 
-    res.render('homepage', {
-      meals,
-      // loggedIn: req.session.loggedIn,
-    });
-  } catch (err) {
-    console.log(err);
-    res.status(500).json(err);
-  }
+  //   res.render('homepage', {
+  //     meals,
+  //     // loggedIn: req.session.loggedIn,
+  //   });
+  // } catch (err) {
+  //   console.log(err);
+  //   res.status(500).json(err);
+  // }
 });
 
 router.get('/meal/:id', async (req, res) => {
