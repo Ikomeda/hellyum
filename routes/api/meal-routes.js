@@ -1,51 +1,46 @@
 const router = require('express').Router();
-const {
-  Meal,
-  Meal_Ingredient,
-  User,
-  Ingredients,
-} = require('../../models');
+const { Meal, Meal_Ingredient, User, Ingredients } = require('../../models');
 
-// GET all meals
-router.get('/', async (req, res) => {
-  try {
-    const data = await Meal.findAll({
-      include: [
-        {
-          model: Ingredients,
-          through: Meal_Ingredient,
-        },
-      ],
-    });
-    console.log(data);
+// // GET all meals
+// router.get('/', async (req, res) => {
+//   try {
+//     const data = await Meal.findAll({
+//       include: [
+//         {
+//           model: Ingredients,
+//           through: Meal_Ingredient,
+//         },
+//       ],
+//     });
+//     console.log(data);
 
-    res.status(200).json(data);
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
+//     res.status(200).json(data);
+//   } catch (err) {
+//     res.status(500).json(err);
+//   }
+// });
 
-// GET one meal
-router.get('/:id', async (req, res) => {
-  try {
-    const data = await Meal.findByPk(req.params.id, {
-      include: [
-        {
-          model: Ingredients,
-          through: Meal_Ingredient,
-        },
-      ],
-    });
-    if (!data) {
-      res.status(404).json({ message: 'No meal with this id' });
-      return;
-    }
+// // GET one meal
+// router.get('/:id', async (req, res) => {
+//   try {
+//     const data = await Meal.findByPk(req.params.id, {
+//       include: [
+//         {
+//           model: Ingredients,
+//           through: Meal_Ingredient,
+//         },
+//       ],
+//     });
+//     if (!data) {
+//       res.status(404).json({ message: 'No meal with this id' });
+//       return;
+//     }
 
-    res.status(200).json(data);
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
+//     res.status(200).json(data);
+//   } catch (err) {
+//     res.status(500).json(err);
+//   }
+// });
 
 // CREATE new meal
 router.post('/', async (req, res) => {

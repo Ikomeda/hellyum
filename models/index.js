@@ -3,8 +3,6 @@ const Meal = require('./Meal');
 const Meal_Ingredient = require('./Meal_Ingredient');
 const Ingredients = require('./Ingredients');
 
-
-
 // Ingredients belong to Many Meals (through Meal_Ingredients)
 Ingredients.belongsToMany(Meal, {
   through: Meal_Ingredient,
