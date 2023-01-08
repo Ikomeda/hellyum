@@ -26,28 +26,31 @@ router.get('/meal/:id', async (req, res) => {
   // if (!req.session.loggedIn) {
   //   res.redirect('/login');
   // } else {
-    try {
-      const dbMealData = await Meal.findByPk(req.params.id, {
-        include: [
-          {
-            model: Ingredients,
-            attributes: ['id', 'name'],
-            through: Meal_Ingredient,    
-          },
-          // {
+  try {
+    const dbMealData = await Meal.findByPk(req.params.id, {
+      include: [
+        {
+          model: Ingredients,
+          attributes: ['id', 'name'],
+          through: Meal_Ingredient,
+          // include: {
           //   model: Meal_Ingredient,
-          //   attributes: ['id', 'meal_id', 'ingredient_id', 'measurement'],
+          //   attributes: ['measurement'],
           // },
-        ],
-      });
-      const meal = dbMealData.get({ plain: true });
-      res.render('meal', { meal });
-    } catch (err) {
-      console.log(err);
-      res.status(500).json(err);
-    }
+        },
+        // {
+        //   model: Meal_Ingredient,
+        //   attributes: ['id', 'meal_id', 'ingredient_id', 'measurement'],
+        // },
+      ],
+    });
+    const meal = dbMealData.get({ plain: true });
+    res.render('meal', { meal });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
   }
-);
+});
 
 //login screen
 router.get('/login', (req, res) => {

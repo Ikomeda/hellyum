@@ -10,7 +10,7 @@ router.post('/', async (req, res) => {
       email: req.body.email,
       password: req.body.password,
     });
-console.log({userData});
+    console.log({ userData });
     req.session.save(() => {
       req.session.user_id = userData.id;
       req.session.logged_in = true;
@@ -62,13 +62,13 @@ router.post('/logout', (req, res) => {
   }
 });
 
-// router.get('/', async (req, res) => {
-//   try {
-//     const userData = await User.findAll({});
-//     res.status(200).json(userData);
-//   } catch (err) {
-//     res.status(500).json(err);
-//   }
-// });
+router.get('/', async (req, res) => {
+  try {
+    const userData = await User.findAll({});
+    res.status(200).json(userData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
 module.exports = router;
