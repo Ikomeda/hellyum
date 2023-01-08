@@ -3,23 +3,44 @@ const { Ingredients, Meal, Meal_Ingredient } = require('../models');
 
 //GET all meals for hompage
 router.get('/', async (req, res) => {
-  res.render('landing');
+  if (!req.session.logged_in) {
+    res.render('landing');
+    return;
+  } else {
+    try {
+      const dbMealData = await Meal.findAll(req.params);
+      console.log({dbMealData});
+
+      const meals = dbMealData.map((meal) =>
+      meal.get({ plain: true})
+      );
+      console.log({meals});
+
+      res.render('homepage', {
+        meals,
+        logged_in: req.session.logged_in,
+      });
+    } catch (err) {
+      console.log(err);
+      res.status(500).json(err);
+    }
+  };
   console.log(req.session);
-  // try {
-  //   const dbMealData = await Meal.findAll();
+//   try {
+//     const dbMealData = await Meal.findAll();
 
-  //   const meals = dbMealData((meal) => {
-  //     meal.get({ plain: true });
-  //   });
+//     const meals = dbMealData((meal) => {
+//       meal.get({ plain: true });
+//     });
 
-  //   res.render('homepage', {
-  //     meals,
-  //     // loggedIn: req.session.loggedIn,
-  //   });
-  // } catch (err) {
-  //   console.log(err);
-  //   res.status(500).json(err);
-  // }
+//     res.render('homepage', {
+//       meals,
+//       loggedIn: req.session.loggedIn,
+//     });
+//   } catch (err) {
+//     console.log(err);
+//     res.status(500).json(err);
+//   }
 });
 
 router.get('/meal/:id', async (req, res) => {
