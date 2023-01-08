@@ -1,3 +1,31 @@
-{{#each meal as | meal_name}}
-{{>meal-details}}
-{{/each}}
+<nav class="navbar is-info">
+      <div class="navbar-brand">
+        <a class="navbar-item">
+         
+        </a>
+        
+      </div>
+        <div class="navbar-end">
+          <div class="navbar-item">
+            <div class="field is-grouped">
+              
+              <p class="control">
+                <a class="button is-info is-inverted" href="">
+                  <span class="icon">
+                    <i class="fas fa-plus"></i>
+                  </span>
+                  <span>Create a Recipe</span>
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div class="container is-flex is-justify-content-space-evenly">
+        <div class="column is-one-quarter">
+        {{#each meals}}
+        {{> meal-details }}
+        {{/each}}
+        </div>
+    </div>
