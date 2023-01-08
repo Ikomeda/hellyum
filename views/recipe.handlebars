@@ -1,0 +1,34 @@
+<div class='container is-fluid my-4'>
+  <div class='notification is-info'>
+    <div class='card'>
+      <div class='card-image'>
+        <figure class='image is-1by1'>
+          <img src='{{meal.image}}' />
+        </figure>
+      </div>
+      <div class='card-content'>
+        <div class='media'>
+          <div class='media-left'>
+
+          </div>
+          <div class='media-content has-text-is-centered'>
+            <p class='title is-4'>{{meal.meal_name}}</p>
+
+          </div>
+        </div>
+
+        <div class='content'>
+          {{meal.instructions}}
+          <br />
+          <ul>
+            {{#each meal.ingredients as |ingredient|}}
+              <li>{{ingredient.meal_ingredient.measurement}}
+                {{ingredient.name}}</li>
+            {{/each}}
+          </ul>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

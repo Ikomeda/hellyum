@@ -1,0 +1,25 @@
+{{!-- <div class="columns is-desktop my-3">
+ <div class="column"> 
+    <div class="card mx-3">
+        <header class="card-header">
+            <p class="card-header-title is-centered is-size-3 has-background-info has-text-white">
+              <a href="/meal/{{id}}">{{meal_name}}</a>
+            </p>
+            
+          </header>
+        <div class="card-image">
+          <figure class="image is-5by3">
+            <img src="{{image}}" alt="Placeholder image">
+          </figure>
+        </div>
+      </div>
+    </div>  --}}
+
+<section class='card meal'>
+  <a href='/meal/{{id}}'>
+    <header class='has-text is-centered'>{{meal_name}}</header>
+  </a>
+  <figure class='image is-1by1'>
+    <img src='{{image}}' />
+  </figure>
+</section>
