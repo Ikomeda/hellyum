@@ -14,21 +14,21 @@ router.get('/', async (req, res) => {
   }
 });
 
-// // GET one Ingredients
-// router.get('/:id', async (req, res) => {
-//   try {
-//     const data = await Ingredients.findByPk(req.params.id, {
-//       include: [{ model: Meal, through: Meal_Ingredient }],
-//     });
-//     if (!data) {
-//       res.status(404).json({ message: 'No ingredient with this id' });
-//       return;
-//     }
-//     res.status(200).json(data);
-//   } catch (err) {
-//     res.status(500).json(err);
-//   }
-// });
+// GET one Ingredients
+router.get('/:id', async (req, res) => {
+  try {
+    const data = await Ingredients.findByPk(req.params.id, {
+      include: [{ model: Meal, through: Meal_Ingredient }],
+    });
+    if (!data) {
+      res.status(404).json({ message: 'No ingredient with this id' });
+      return;
+    }
+    res.status(200).json(data);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
 // CREATE new Ingredients
 router.post('/', async (req, res) => {
