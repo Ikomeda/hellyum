@@ -1,0 +1,15 @@
+figure {
+  max-width: 500px;
+  min-width: 200px;
+}
+
+.all-meals {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.meal {
+  padding: 10px;
+  margin: 10px;
+}
