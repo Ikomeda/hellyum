@@ -43,7 +43,7 @@ const signupFormHandler = async (event) => {
     if (response.ok) {
       document.location.replace('/');
     } else {
-      alert(response.statusText);
+      alert(('please provide a username, email, and password that is at least 8 characters'));
     }
   }
 };
