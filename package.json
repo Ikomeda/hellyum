@@ -23,6 +23,7 @@
     "connect-session-sequelize": "^6.1.1",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "express-fileupload": "^1.4.0",
     "express-handlebars": "^5.2.0",
     "express-session": "^1.17.3",
     "handlebars": "^4.7.7",
