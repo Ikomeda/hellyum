@@ -1,4 +1,6 @@
-<html lang='en'>
+<!DOCTYPE html>
+<html lang="en">
+
   <head>
     <meta charset='UTF-8' />
     <meta http-equiv='X-UA-Compatible' content='IE=edge' />
@@ -15,6 +17,9 @@
       <div class='hero-body'>
         <div class='container has-text-centered'>
           <p class='title'>Welcome to HELLYUM!</p>
+          {{#if logged_in}}
+          <a class="button is-info is-inverted" id="logout" href="">Logout</a>
+          {{else}} 
           <a
             class='button is-info is-inverted'
             id='login'
@@ -24,10 +29,16 @@
           >
             <span>HOME</span>
           </a>
+          {{/if}}
         </div>
       </div>
     </section>
     {{{body}}}
+
+  {{#if logged_in}}
+  <script src="./js/logout.js"></script>
+  {{/if}}
+
     <script
       defer
       src='https://use.fontawesome.com/releases/v5.3.1/js/all.js'
