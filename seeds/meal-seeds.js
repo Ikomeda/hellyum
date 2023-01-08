@@ -3,7 +3,7 @@ const { Meal } = require('../models');
 const mealData = [
   {
     meal_name: 'Cowboy Quesadillas',
-    image: '02-cowboy-quesadillas.jpg',
+    image: 'https://houseofyumm.com/wp-content/uploads/2016/05/Cowboy-Quesadillas-18-680x520.jpg',
     instructions:
       'Prepare the ingredients: shred the chicken and coat it with your favorite BBQ sauce. Make the Texas Caviar by combining all of the ingredients and stirring together. Heat a flour tortilla on a large skillet, add the shredded cheese, BBQ chicken and Texas Caviar on top. Add another tortilla on top. When the tortilla on the bottom is crisp and golden, carefully flip over to cook the other side.',
   },

@@ -4,6 +4,7 @@ const { Ingredients, Meal, Meal_Ingredient } = require('../models');
 //GET all meals for hompage
 router.get('/', async (req, res) => {
   res.render('landing');
+  console.log(req.session);
   // try {
   //   const dbMealData = await Meal.findAll();
 
@@ -22,34 +23,35 @@ router.get('/', async (req, res) => {
 });
 
 router.get('/meal/:id', async (req, res) => {
-  if (!req.session.loggedIn) {
-    res.redirect('/login');
-  } else {
+  // if (!req.session.loggedIn) {
+  //   res.redirect('/login');
+  // } else {
     try {
       const dbMealData = await Meal.findByPk(req.params.id, {
         include: [
           {
             model: Ingredients,
             attributes: ['id', 'name'],
+            through: Meal_Ingredient,    
           },
-          {
-            model: Meal_Ingredient,
-            attributes: ['id', 'meal_id', 'ingredient_id', 'measurement'],
-          },
+          // {
+          //   model: Meal_Ingredient,
+          //   attributes: ['id', 'meal_id', 'ingredient_id', 'measurement'],
+          // },
         ],
       });
       const meal = dbMealData.get({ plain: true });
-      res.render('meal', { meal, loggedIn: req.session.loggedIn });
+      res.render('meal', { meal });
     } catch (err) {
       console.log(err);
       res.status(500).json(err);
     }
   }
-});
+);
 
 //login screen
 router.get('/login', (req, res) => {
-  if (req.session.loggedIn) {
+  if (req.session.logged_in) {
     res.redirect('/');
     return;
   }
