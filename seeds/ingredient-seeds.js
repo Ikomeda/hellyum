@@ -109,15 +109,6 @@ const ingredientData = [
   {
     name: 'Cream Cheese',
   },
-  {
-    name: '',
-  },
-  {
-    name: '',
-  },
-  {
-    name: '',
-  },
 ];
 
 const seedIngredients = () => Ingredients.bulkCreate(ingredientData);

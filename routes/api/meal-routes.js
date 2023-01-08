@@ -20,27 +20,27 @@ router.get('/', async (req, res) => {
   }
 });
 
-// // GET one meal
-// router.get('/:id', async (req, res) => {
-//   try {
-//     const data = await Meal.findByPk(req.params.id, {
-//       include: [
-//         {
-//           model: Ingredients,
-//           through: Meal_Ingredient,
-//         },
-//       ],
-//     });
-//     if (!data) {
-//       res.status(404).json({ message: 'No meal with this id' });
-//       return;
-//     }
+// GET one meal
+router.get('/:id', async (req, res) => {
+  try {
+    const data = await Meal.findByPk(req.params.id, {
+      include: [
+        {
+          model: Ingredients,
+          through: Meal_Ingredient,
+        },
+      ],
+    });
+    if (!data) {
+      res.status(404).json({ message: 'No meal with this id' });
+      return;
+    }
 
-//     res.status(200).json(data);
-//   } catch (err) {
-//     res.status(500).json(err);
-//   }
-// });
+    res.status(200).json(data);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
 // CREATE new meal
 router.post('/', async (req, res) => {
