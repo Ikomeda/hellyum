@@ -1,18 +1,18 @@
 const router = require('express').Router();
 const { User, Meal, Meal_Ingredient, Ingredients } = require('../../models');
 
-// // GET all ingredients
-// router.get('/', async (req, res) => {
-//   try {
-//     const data = await Ingredients.findAll({
-//       include: [{ model: Meal, through: Meal_Ingredient }],
-//     });
+// GET all ingredients
+router.get('/', async (req, res) => {
+  try {
+    const data = await Ingredients.findAll({
+      include: [{ model: Meal, through: Meal_Ingredient }],
+    });
 
-//     res.status(200).json(data);
-//   } catch (err) {
-//     res.status(500).json(err);
-//   }
-// });
+    res.status(200).json(data);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
 // // GET one Ingredients
 // router.get('/:id', async (req, res) => {

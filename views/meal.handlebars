@@ -18,6 +18,13 @@
         </div>
 
         <div class='content'>
+          <ul>
+            {{#each meal.ingredients as |ingredient|}}
+              <li>{{ingredient.meal_ingredient.measurement}}
+                {{ingredient.name}}</li>
+            {{/each}}
+          </ul>
+
           {{meal.instructions}}
           <br />
 

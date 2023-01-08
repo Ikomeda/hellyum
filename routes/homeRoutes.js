@@ -31,21 +31,12 @@ router.get('/meal/:id', async (req, res) => {
       include: [
         {
           model: Ingredients,
-          attributes: ['id', 'name'],
           through: Meal_Ingredient,
-          // include: {
-          //   model: Meal_Ingredient,
-          //   attributes: ['measurement'],
-          // },
         },
-        // {
-        //   model: Meal_Ingredient,
-        //   attributes: ['id', 'meal_id', 'ingredient_id', 'measurement'],
-        // },
       ],
     });
     const meal = dbMealData.get({ plain: true });
-    res.render('meal', { meal });
+    res.render('recipe', { meal });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
