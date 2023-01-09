@@ -22,12 +22,6 @@ const mealData = [
     instructions:
       'Step One: Place all of your ingredients into your instant pot bowl in the following order: 2 chicken breasts, drained black and white beans, chopped onion, corn with juice, tomatoes with juice, and 1/2 cup chicken broth. Step Two: Add 1/2 to 1 tsp chili powder (use 1/2 tsp to make it kid friendly), 1 tsp cumin, ranch packet. Stir everything to combine, getting some of the juice under the chicken to keep it from scorching. Step Three Cut cream cheese into 6 pieces and place over the top of chili. Cover and seal with lid, switch the valve to the "sealing" position and cook for 20 min on manual high pressure. Once it is done cooking, let it naturally depressurize for 10 min then switch the valve to the "venting" position to completely release steam before opening lid. Step Four: Remove the chicken breasts to a plate and shred apart with 2 forks. Stir everything together in the pot to melt the cream cheese into the chili then return the shredded chicken and stir to combine. Serve garnished with avocado and cilantro if desired.',
   },
-  {
-    meal_name: 'Grilled Hamburgers',
-    image: '05-grilled-hamburger.jpg',
-    instructions:
-      'Step One: In a large mixing bowl add the ground beef and then sprinkle the remaining ingredients on top. Step Two: Fold the meat a few times to incorporate the ingredients. This should take only about 30 to 45 seconds. Do NOT overmix the meat. Step Three: On a large plate or serving tray lined with parchment paper place your meat in the center. Score the meat with the side of your hand into 6 evenly spaced sections. Step Four: Tear off each section and carefully form each into a patty that is approximately one inch thick and 4 inches across. As you form the patty, be sure to form it with a ½ inch indention in the center. Step Five: Cover the formed patties with plastic wrap and transfer to the refrigerator until ready to grill. Step Six: Heat your grill to Medium-HIGH heat. Step Seven: Place patties on the grill over direct heat. Cook for 3 minutes, then flip. Do NOT press down on the patties.',
-  },
 ];
 
 const seedMeal = () => Meal.bulkCreate(mealData);
