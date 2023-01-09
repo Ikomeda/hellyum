@@ -35,8 +35,6 @@
 
 //   Parker's try starts
 async function handleMealCreation() {
-  const createButton = document.querySelector('#create_button');
-  const uploadImage = document.querySelector('#image-upload');
   const meal_name = document.querySelector('#meal_name').value.trim();
   const instructions = document.querySelector('#instructions').value.trim();
   const ingredients = document.querySelectorAll('.ingredients').value.trim();
@@ -79,6 +77,8 @@ async function handleMealCreation() {
     }
   }
 }
+
+document.querySelector('#image-upload').addEventListener('click', uploadImage);
 
 document
   .querySelector('#new-recipe-form')
