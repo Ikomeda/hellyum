@@ -8,7 +8,8 @@ router.get('/', async (req, res) => {
       include: [
         {
           model: Ingredients,
-          through: Meal_Ingredient,
+          attributes: ['id']['name'],
+          // through: Meal_Ingredient,
         },
       ],
     });
@@ -46,9 +47,19 @@ router.get('/:id', async (req, res) => {
 router.post('/', async (req, res) => {
   try {
     const data = await Meal.create({
+      include: [
+        {
+          model: Ingredients,
+          through: Meal_Ingredient,
+          attributes: ['id']['measurement'],
+
+        },
+      ],
       meal_name: req.body.meal_name,
       image: req.body.image,
       instructions: req.body.instructions,
+      ingredients: req.body.ingredients,
+      measurement: req.body.measurement
     });
     res.status(200).json(data);
   } catch (err) {
