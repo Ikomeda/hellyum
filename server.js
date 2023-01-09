@@ -1,12 +1,21 @@
+require('dotenv').config();
 const path = require('path');
 const express = require('express');
 const routes = require('./routes');
 const session = require('express-session');
 const exphbs = require('express-handlebars');
-// const helpers = require('./utils/helpers');
 
 const sequelize = require('./config/connection');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
+
+const fileUpload = require('express-fileupload');
+const cloudinary = require('cloudinary').v2;
+
+cloudinary.config({
+  cloud_name: process.env.CLOUD_NAME,
+  api_key: process.env.API_KEY,
+  api_secret: process.env.API_SECRET,
+});
 
 const app = express();
 const PORT = process.env.PORT || 3001;
