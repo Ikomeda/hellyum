@@ -1,0 +1,39 @@
+ <div class="wrapper">
+   <h1 class="is-size-3">Create a Recipe </h1>
+
+    <div class="field"> 
+      <label class="label">Meal Name</label>
+      <div class="control has-icons-left has-icons-right">
+      <input  type="text" size="35" >
+      
+  </div>
+</div>
+
+<div class="field">
+  <label class="label is-size-6">Instructions</label>
+  <div class="control">
+    <textarea class="textarea"></textarea>
+  </div>
+</div>
+<div class="field">
+  <label class="ingredients is-size-6">Ingredients</label>
+  <div class="control" id ="ingredients">
+    <input type="text" name="ingredients[]" class="ingredients"  size="20" placeholder="add ingredient">
+    <input type="text" name="measurements[]" class="measurements" size="20" placeholder="add measurement">
+  </div>
+  
+  <a href="#" id="add-ingredient"><i class="fa fa-plus"></i> add ingredient</a>
+ 
+  
+</div>
+
+<div class="field is-grouped">
+  <div class="control">
+    <button class="button is-link is-info">Create</button>
+  </div>
+  
+</div>
+
+</div>
+ 
+ <script src="./js/addingredient.js"></script>
