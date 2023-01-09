@@ -1,5 +1,18 @@
-const router = require('express').Router();
+const express = require('express');
+const router = express.Router();
 const { Meal, Meal_Ingredient, User, Ingredients } = require('../../models');
+const fileUpload = require('express-fileupload');
+const cloudinary = require('cloudinary').v2;
+require('dotenv').config();
+const app = express();
+
+app.use(fileUpload({ useTempFiles: true }));
+
+cloudinary.config({
+  cloud_name: process.env.CLOUD_NAME,
+  api_key: process.env.API_KEY,
+  api_secret: process.env.API_SECRET,
+});
 
 // GET all meals
 router.get('/', async (req, res) => {
@@ -46,22 +59,21 @@ router.get('/:id', async (req, res) => {
 // CREATE new meal
 router.post('/', async (req, res) => {
   try {
-    const data = await Meal.create({
-      include: [
-        {
-          model: Ingredients,
-          through: Meal_Ingredient,
-          attributes: ['id']['measurement'],
+    const meal_name = req.body.meal_name;
+    const instructions = req.body.instructions;
+    const image = req.files.image;
 
-        },
-      ],
-      meal_name: req.body.meal_name,
-      image: req.body.image,
-      instructions: req.body.instructions,
-      ingredients: req.body.ingredients,
-      measurement: req.body.measurement
-    });
-    res.status(200).json(data);
+    const cloudURL = await cloudinary.uploader.upload(image.tempFilePath);
+
+    const mealObj = {
+      meal_name,
+      instructions,
+      cloudURL,
+    };
+
+    const postMeal = Meal.create(mealObj);
+    if (postMeal) return res.status(200).json({ message: 'Meal Created!' });
+    return res.status(400).json({ message: 'Error in meal creation' });
   } catch (err) {
     res.status(500).json(err);
   }
