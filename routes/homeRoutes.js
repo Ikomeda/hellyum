@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const { Ingredients, Meal, Meal_Ingredient } = require('../models');
 
-//GET all meals for hompage
+//GET all meals for homepage
 router.get('/', async (req, res) => {
   if (!req.session.logged_in) {
     res.render('landing');
@@ -47,6 +47,13 @@ router.get('/meal/:id', async (req, res) => {
     console.log(err);
     res.status(500).json(err);
   }
+}});
+
+router.get('/create-recipe', async (req, res) => {
+  if (!req.session.logged_in) {
+    res.redirect('/login');
+  } else {
+      res.render('create-recipe')
 }});
 
 //login screen

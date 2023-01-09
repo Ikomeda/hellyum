@@ -1,5 +1,6 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection.js');
+const Meal_Ingredient = require('./Meal_Ingredient.js');
 
 class Meal extends Model {}
 
@@ -21,6 +22,7 @@ Meal.init(
       validate: {
         isUrl: true,
       },
+      allowNull: true,
     },
     instructions: {
       type: DataTypes.TEXT,
