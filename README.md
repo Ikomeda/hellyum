@@ -1,18 +1,37 @@
-# hellyum
+# Hellyum
 
-Project Requirements
-You and your group will use everything you’ve learned over the past six modules to create a real-world full-stack application that you’ll be able to showcase to potential employers. The user story and acceptance criteria will depend on the project that you create, but your project must fulfil the following requirements:
-* Use Node.js and Express.js to create a RESTful API.
-* Use Handlebars.js as the template engine.
-* Use MySQL and the Sequelize ORM for the database.
-* Have both GET and POST routes for retrieving and adding new data.
-* Use at least one new library, package, or technology that we haven’t discussed.
-* Have a folder structure that meets the MVC paradigm.
-* Include authentication (express-session and cookies).
-* Protect API keys and sensitive information with environment variables.
-* Be deployed using Heroku (with data).
-* Have a polished UI.
-* Be responsive.
-* Be interactive (i.e., accept and respond to user input).
-* Meet good-quality coding standards (file structure, naming conventions, follows best practices for class/id naming conventions, indentation, quality comments, etc.).
-* Have a professional README (with unique name, description, technologies used, screenshot, and link to deployed application).
+## Description
+
+We wanted to create an application that would allow you to store recipes for weekly meal planning. In future development we would like to add a calender that would allow you to plan your meals and also give you a grocery list for the week!
+We were able to create a page that stores recipes and allows you to create a recipe. 
+Technologies used:
+Handlebars, JavaScript, Bulma, MySql, Sequelize, Eslint, Prettier, Bcrypt, Express, Node.js cloudinary,
+
+## Table of Contents (Optional)
+
+If your README is long, add a table of contents to make it easy for users to find what they need.
+
+- [Installation](#installation)
+- [Usage](#usage)
+- [Credits](#credits)
+- [License](#license)
+
+## Installation
+
+This application is online, follow our link to access the website!
+
+## Usage
+ 
+ Deployed to Heroku: https://hellyum.herokuapp.com/
+
+## Credits
+
+ Payton Parker: https://github.com/Ikomeda
+ Parker Greenwell: https://github.com/prkrgreenwell
+ Juana Maldonado: https://github.com/Jm1211
+ Luka Perez: https://github.com/lukaperez
+ 
+ ## License
+
+The last section of a high-quality README file is the license. This lets other developers know what they can and cannot do with your project. If you need help choosing a license, refer to [https://choosealicense.com/](https://choosealicense.com/).
+
