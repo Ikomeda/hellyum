@@ -26,5 +26,5 @@ cloudinary.config({
   secure: true,
 });
 
-// module.exports = { sequelize, cloudinary };
+module.exports = { sequelize, cloudinary };
 module.exports = sequelize;
